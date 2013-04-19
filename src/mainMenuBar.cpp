@@ -9,11 +9,9 @@
 
 MainMenuBar::MainMenuBar(QWidget *parent) : 
                 QMenuBar(parent),
-                fileMenu(this)
+                fileMenu(this),
+                windowMenu(this)
 {
     addMenu(&fileMenu);
-}
-
-MainMenuBar::~MainMenuBar()
-{
+    addMenu(&windowMenu);
 }

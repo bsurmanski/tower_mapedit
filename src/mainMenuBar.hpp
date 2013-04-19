@@ -11,16 +11,17 @@
 #include <QMenuBar>
 
 #include "mainFileMenu.hpp"
+#include "mainWindowMenu.hpp"
 
 class MainMenuBar : public QMenuBar
 {
     Q_OBJECT
     public:
         MainMenuBar(QWidget *parent = 0);
-        ~MainMenuBar();
 
     private:
         MainFileMenu fileMenu;
+        MainWindowMenu windowMenu;
 };
 
 #endif

@@ -49,11 +49,11 @@ void MainGLWidget::initializeGL()
     glGenQueries(1, &primQuery);
 
     drawProgram = glbCreateProgram(NULL);
-    glbProgramAttachNewShaderSourceFile(drawProgram, "glsl/drawmap.vs", GLB_VERTEX_SHADER);
-    glbProgramAttachNewShaderSourceFile(drawProgram, "glsl/drawmap.fs", GLB_FRAGMENT_SHADER);
+    glbProgramAttachNewShaderSourceFile(drawProgram, "res/glsl/drawmap.vs", GLB_VERTEX_SHADER);
+    glbProgramAttachNewShaderSourceFile(drawProgram, "res/glsl/drawmap.fs", GLB_FRAGMENT_SHADER);
     pickProgram = glbCreateProgram(NULL);
-    glbProgramAttachNewShaderSourceFile(pickProgram, "glsl/pickmap.vs", GLB_VERTEX_SHADER);
-    glbProgramAttachNewShaderSourceFile(pickProgram, "glsl/pickmap.fs", GLB_FRAGMENT_SHADER);
+    glbProgramAttachNewShaderSourceFile(pickProgram, "res/glsl/pickmap.vs", GLB_VERTEX_SHADER);
+    glbProgramAttachNewShaderSourceFile(pickProgram, "res/glsl/pickmap.fs", GLB_FRAGMENT_SHADER);
     pickTexture = glbCreateTexture(0, GLB_2INT16, 640, 480, 1, NULL, NULL);
     pickBuffer = glbCreateFramebuffer(NULL); 
     glbFramebufferColor(pickBuffer, 0, pickTexture);
@@ -173,6 +173,7 @@ void MainGLWidget::timeout()
         if(coord[0] != 0xffff && coord[1] != 0xffff)
         {
             map_setTexture(map, coord[0], coord[1], 1);
+            map_addHeight(map, coord[0], coord[1], 1);
         }
     }
 

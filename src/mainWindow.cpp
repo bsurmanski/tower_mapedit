@@ -11,11 +11,12 @@ MainWindow *MainWindow::instance = NULL;
 
 MainWindow::MainWindow(QWidget *parent) : 
                 QMainWindow(parent),
-                menuBar(this)
+                menuBar(this),
+                glWidget(this)
 {
     instance = this;
-    glWidget = new MainGLWidget(this);
-    setCentralWidget(glWidget);
+    setWindowTitle("Tower Mapedit");
+    setCentralWidget(&glWidget);
     setMenuBar(&menuBar);
     setGeometry(20, 40, 640, 480);
 }
@@ -26,10 +27,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::newMap(int x, int y)
 {
-    if(glWidget)
-    {
-        glWidget->newMap(x, y);
-    }
+    glWidget.newMap(x, y);
 }
 
 MainWindow *MainWindow::getInstance()

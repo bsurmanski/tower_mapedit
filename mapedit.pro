@@ -3,16 +3,22 @@ HEADERS += \
         src/mainWindow.hpp \
         src/newMapDialog.hpp \
         src/mainFileMenu.hpp \
+        src/mainWindowMenu.hpp \
         src/mainMenuBar.hpp \
         src/mainGLWidget.hpp \
+        src/toolboxWidget.hpp \
+        src/FlowLayout.h 
 
 SOURCES += \
             src/main.cpp \
             src/mainWindow.cpp \
             src/newMapDialog.cpp \
             src/mainFileMenu.cpp \
+            src/mainWindowMenu.cpp \
             src/mainMenuBar.cpp \
             src/mainGLWidget.cpp \
+            src/toolboxWidget.cpp \
+            src/FlowLayout.cpp  \
             src/map.c
 
 TARGET = mapedit

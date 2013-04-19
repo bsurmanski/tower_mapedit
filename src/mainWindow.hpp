@@ -33,7 +33,7 @@ class MainWindow : public QMainWindow
 
     private:
         MainMenuBar menuBar;
-        MainGLWidget *glWidget;
+        MainGLWidget glWidget;
         static MainWindow *instance;
 };
 

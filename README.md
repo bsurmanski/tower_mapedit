@@ -1,4 +1,4 @@
-tower_mapedit
+tower\_mapedit
 =============
 
 Map Editor for A Tilebased Game
