@@ -4,6 +4,7 @@ HEADERS += \
         src/newMapDialog.hpp \
         src/mainFileMenu.hpp \
         src/mainWindowMenu.hpp \
+        src/mainHelpMenu.hpp \
         src/mainMenuBar.hpp \
         src/mainGLWidget.hpp \
         src/toolboxWidget.hpp \
@@ -15,6 +16,7 @@ SOURCES += \
             src/newMapDialog.cpp \
             src/mainFileMenu.cpp \
             src/mainWindowMenu.cpp \
+            src/mainHelpMenu.cpp \
             src/mainMenuBar.cpp \
             src/mainGLWidget.cpp \
             src/toolboxWidget.cpp \

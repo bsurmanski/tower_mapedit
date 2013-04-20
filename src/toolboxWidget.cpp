@@ -15,13 +15,28 @@ extern "C"
 /*{{{ ToolboxWidget*/
 ToolboxWidget::ToolTypeBox::ToolTypeBox(QWidget *parent) : 
                     QGroupBox("Tools", parent),
-                    boxLayout(this)
+                    boxLayout(this),
+                    toolButtonGroup(this)
 {
+    const char *const icons[] = 
+    {
+        "res/icons/draw-brush.png",
+        "res/icons/fill-color.png",
+        "res/icons/select-rectangular.png",
+        "res/icons/draw-path.png"
+    };
+
     for(int i = 0; i < BUTTON_LAST; i++)
     {
-        tooltypes[i] = new QPushButton("Test", this); 
+        tooltypes[i] = new QPushButton(this); 
+        tooltypes[i]->setIcon(QIcon(QPixmap(icons[i])));
+        tooltypes[i]->setCheckable(true);
         boxLayout.addWidget(tooltypes[i]);
+        toolButtonGroup.addButton(tooltypes[i]);
     }
+
+    tooltypes[0]->setChecked(true);
+    toolButtonGroup.setExclusive(true);
 }/*}}}*/
 
 /*{{{ ToolTabWidget*/

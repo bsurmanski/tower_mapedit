@@ -45,6 +45,7 @@ class ToolboxWidget : public QWidget
             };
 
             FlowLayout boxLayout;
+            QButtonGroup toolButtonGroup;
             QPushButton *tooltypes[BUTTON_LAST];
         };
 

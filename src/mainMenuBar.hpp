@@ -12,6 +12,7 @@
 
 #include "mainFileMenu.hpp"
 #include "mainWindowMenu.hpp"
+#include "mainHelpMenu.hpp"
 
 class MainMenuBar : public QMenuBar
 {
@@ -22,6 +23,7 @@ class MainMenuBar : public QMenuBar
     private:
         MainFileMenu fileMenu;
         MainWindowMenu windowMenu;
+        MainHelpMenu helpMenu;
 };
 
 #endif
